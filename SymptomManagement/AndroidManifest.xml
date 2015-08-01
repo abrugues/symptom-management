@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.coursera.capstone"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".LoginMainActivity"
+            android:label="@string/app_name"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Patient's Activities -->
+        <activity
+            android:name=".PatientMainMenuActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name=".PatientCheckInActivity"
+            android:label="@string/title_activity_checkin" >
+        </activity>
+        <activity
+            android:name=".PatientReminderActivity"
+            android:label="@string/set_reminders" >
+        </activity>
+
+        <!-- Doctor's Activities -->
+        <activity
+            android:name=".DoctorMainMenuActivity"
+            android:label="@string/title_activity_doctor_main_menu" >
+        </activity>
+        <activity
+            android:name=".DoctorCheckInListActivity"
+            android:label="@string/title_activity_doctor_check_in" >
+        </activity>
+        <activity
+            android:name=".DoctorCheckInActivity"
+            android:label="@string/title_activity_doctor_check_in" >
+        </activity>
+        <activity
+            android:name=".DoctorMedicationActivity"
+            android:label="@string/title_activity_doctor_update_medication" >
+        </activity>
+        
+
+        <receiver
+            android:name=".process.ReminderBootReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".process.ReminderSchedulerReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".process.ReminderNotificationService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

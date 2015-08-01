@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/questTwoTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:text="@string/question_two" />
+    
+    <RadioGroup 
+        android:id="@+id/questTwoRadioGroup"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content" 
+    	android:layout_centerHorizontal="true"
+    	android:layout_below="@id/questTwoTxtView"
+    	android:layout_marginTop="16dp" >
+        
+    	<RadioButton
+        	android:id="@+id/noRadioBtn"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="30sp" 
+        	android:text="@string/no"
+        	android:onClick="onQuestionTwoClicked" />
+
+    	<RadioButton
+        	android:id="@+id/someRadioBtn"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="30sp" 
+        	android:text="@string/some"
+        	android:onClick="onQuestionTwoClicked" />
+    
+    	<RadioButton
+        	android:id="@+id/severeRadioBtn"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="30sp" 
+        	android:text="@string/no_eat"
+        	android:onClick="onQuestionTwoClicked" />
+    
+    </RadioGroup>
+
+</RelativeLayout>

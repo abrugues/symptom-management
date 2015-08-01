@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="8dp" >
+
+    <TextView 
+        android:id="@+id/medicationNameLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/name" />
+    
+    <TextView 
+        android:id="@+id/medicationNameTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/medicationNameLabelTxtView"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:id="@+id/medicationTakenLableTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/medicationNameTxtView"
+        android:layout_marginLeft="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/taken" />
+    
+    <TextView 
+        android:id="@+id/medicationTakenTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/medicationTakenLableTxtView"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:id="@+id/medicationTimestampLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicationNameLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/timestamp" />
+    
+    <TextView 
+        android:id="@+id/medicationTimestampTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/medicationNameLabelTxtView"
+        android:layout_toRightOf="@id/medicationTimestampLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+
+</RelativeLayout>

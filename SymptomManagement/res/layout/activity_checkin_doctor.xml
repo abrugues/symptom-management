@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="org.coursera.capstone.DoctorCheckInActivity" >
+    
+    <TextView
+        android:id="@+id/checkinTitleTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="32sp"
+        android:text="@string/checkin_by"/>
+    
+    <TextView 
+        android:id="@+id/checkinDateLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinTitleTxtView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/date" />
+    
+    <TextView 
+        android:id="@+id/checkinDateTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinTitleTxtView"
+        android:layout_toRightOf="@id/checkinDateLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:id="@+id/checkinTimeLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinDateLabelTxtView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/time" />
+    
+    <TextView 
+        android:id="@+id/checkinTimeTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinDateLabelTxtView"
+        android:layout_toRightOf="@id/checkinTimeLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:id="@+id/painSeverityLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinTimeLabelTxtView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/pain_severity" />
+    
+    <TextView 
+        android:id="@+id/painSeverityTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinTimeLabelTxtView"
+        android:layout_toRightOf="@id/painSeverityLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:id="@+id/painStopLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/painSeverityLabelTxtView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/pain_stops_eating_drinking" />
+    
+    <TextView 
+        android:id="@+id/painStopTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/painSeverityLabelTxtView"
+        android:layout_toRightOf="@id/painStopLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <TextView 
+        android:id="@+id/medicationTakenLabelTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/painStopLabelTxtView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/medication_taken" />
+    
+    <TextView 
+        android:id="@+id/medicationTakenTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/painStopLabelTxtView"
+        android:layout_toRightOf="@id/medicationTakenLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="16sp" />
+    
+    <LinearLayout 
+        android:id="@+id/medicationsLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/medicationTakenLabelTxtView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp" >
+        
+    </LinearLayout>
+    
+
+</RelativeLayout>
