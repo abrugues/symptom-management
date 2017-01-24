@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	
+    <LinearLayout
+    	android:id="@+id/switchButtonsLinLay"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:gravity="center_horizontal"
+    	android:padding="6dp"
+    	android:weightSum="2"
+    	android:background="?android:attr/dividerVertical" >
+    
+    	<Button
+    	    android:id="@+id/switchToDateBtn"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="1"
+    	    android:background="?android:attr/selectableItemBackground"
+    	    android:text="@string/set_date" />
+    	
+    	<Button
+    	    android:id="@+id/switchToTimeBtn"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="1"
+    	    android:background="?android:attr/selectableItemBackground"
+    	    android:text="@string/set_time" />
+    
+    </LinearLayout>
+    
+    <ViewSwitcher 
+        android:id="@+id/dateTimePickerVS"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/switchButtonsLinLay" />
+	
+</RelativeLayout>

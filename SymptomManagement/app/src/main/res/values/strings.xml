@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Symptom Management</string>
+    <string name="active">Active:</string>
+    <string name="add_new_alarm">Add new reminder</string>
+
+    <string-array name="alarm_dialog">
+        <item>Delete</item>
+    </string-array>
+    <string-array name="patient_dialog">
+        <item>View check-ins</item>
+        <item>Add medication</item>
+    </string-array>
+
+    <string name="logout">Logout</string>
+    <string name="check_in">Check-in</string>
+    <string name="set_reminders">Set Reminders</string>
+    <string name="title_activity_checkin">CheckinActivity</string>
+    <string name="moderate">Moderate</string>
+    <string name="well_controlled">Well-controlled</string>
+    <string name="severe">Severe</string>
+    <string name="question_one">How bad is your mouth pain/sore throat?</string>
+    <string name="question_two">Does your pain stop you from eating/drinking?</string>
+    <string name="question_three">Did you take your pain medication?</string>
+    <string name="question_four">Did you take your </string>
+    <string name="question_submit">Do you want to submit this check-in to your doctor?</string>
+    <string name="date">Date: </string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="some">Some</string>
+    <string name="no_eat">I can\'t eat</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="wellcome">Enter your username and password</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">Login</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="set_time">Set time</string>
+    <string name="set_date">Set date</string>
+    <string name="submit">Submit</string>
+    <string name="title_activity_doctor_main_menu">DoctorMainMenuActivity</string>
+    <string name="welcome_dr">"Welcome Dr. "</string>
+    <string name="patient_name">patient name</string>
+    <string name="search">Search</string>
+    <string name="title_activity_doctor_check_in">DoctorCheckInActivity</string>
+    <string name="title_activity_doctor_update_medication">DoctorUpdateMedicationActivity</string>
+    <string name="medications_of">"Medications of "</string>
+    <string name="about_title">About Symptom Management</string>
+    <string name="medication_name">medication name</string>
+    <string name="add">Add</string>
+    <string name="about_text">\'Symptom Management\' has been developed for the \'Android Capstone Project\' course, 
+        part of the \'Mobile and Cloud Computing Specialization\'\n\n
+        Icons by www.icons8.com</string>
+    <string name="checkins_by">Check-ins by</string>
+    <string name="patient_no_checkins">This patient has no check-ins yet</string>
+    <string name="checkin_by">Check-in by</string>
+    <string name="time">Time:</string>
+    <string name="pain_severity">Pain severity:</string>
+    <string name="pain_stops_eating_drinking">Pain stops eating/drinking:</string>
+    <string name="medication_taken">Medication taken:</string>
+    <string name="name">Name:</string>
+    <string name="taken">Taken:</string>
+    <string name="timestamp">Timestamp:</string>
+    <string name="i_cant_eat_during_12_hours">I can\'t eat during 12 hours</string>
+    <string name="severe_pain_the_last_12_hours">Severe pain the last 12 hours</string>
+    <string name="at_least_moderate_pain_the_last_16_hours">At least moderate pain the last 16 hours</string>
+
+</resources>

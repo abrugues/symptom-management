@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/questFiveTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="40sp"
+        android:text="@string/question_submit" />
+
+    <Button
+        android:id="@+id/submitCheckinBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/questFiveTxtView"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:text="@string/submit"
+        android:onClick="onSubmitCheckin" />
+    
+    <Button 
+        android:id="@+id/cancelCheckinBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/submitCheckinBtn"
+        android:layout_marginTop="4dp"
+        android:layout_centerVertical="true"
+        android:text="@string/cancel"
+        android:onClick="onCancelCheckin" />
+    
+</RelativeLayout>

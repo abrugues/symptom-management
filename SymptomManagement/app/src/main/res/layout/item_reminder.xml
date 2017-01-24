@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:gravity="center_vertical"
+        android:textSize="36sp">
+    </TextView>
+    
+    <CheckBox
+        android:id="@+id/activeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true" >
+    </CheckBox>
+    
+    <TextView 
+        android:id="@+id/activeTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_toLeftOf="@id/activeCheckBox"
+        android:text="@string/active"
+        android:textSize="36sp" >
+    </TextView>
+
+</RelativeLayout>
