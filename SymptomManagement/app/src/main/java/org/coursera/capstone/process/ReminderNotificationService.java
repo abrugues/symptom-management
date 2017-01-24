@@ -1,6 +1,6 @@
 package org.coursera.capstone.process;
 
-import org.coursera.capstone.PatientCheckInActivity;
+import org.coursera.capstone.ui.PatientCheckInActivity;
 import org.coursera.capstone.R;
 
 import android.app.Notification;

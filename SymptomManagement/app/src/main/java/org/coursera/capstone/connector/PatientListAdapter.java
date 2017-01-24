@@ -3,8 +3,8 @@ package org.coursera.capstone.connector;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.coursera.capstone.DoctorCheckInListActivity;
-import org.coursera.capstone.DoctorMedicationActivity;
+import org.coursera.capstone.ui.DoctorCheckInListActivity;
+import org.coursera.capstone.ui.DoctorMedicationActivity;
 import org.coursera.capstone.R;
 import org.coursera.capstone.client.SymptomSvcApi;
 import org.coursera.capstone.model.Alert;

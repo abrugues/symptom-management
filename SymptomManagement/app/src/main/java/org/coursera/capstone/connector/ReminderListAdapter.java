@@ -3,7 +3,7 @@ package org.coursera.capstone.connector;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.coursera.capstone.PatientReminderActivity;
+import org.coursera.capstone.ui.PatientReminderActivity;
 import org.coursera.capstone.R;
 import org.coursera.capstone.model.Reminder;
 import org.coursera.capstone.process.ReminderSchedulerReceiver;

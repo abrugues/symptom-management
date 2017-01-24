@@ -1,5 +1,6 @@
-package org.coursera.capstone;
+package org.coursera.capstone.ui;
 
+import org.coursera.capstone.R;
 import org.coursera.capstone.dialog.AboutDialog;
 
 import android.app.Activity;

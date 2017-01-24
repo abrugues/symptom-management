@@ -1,7 +1,8 @@
-package org.coursera.capstone;
+package org.coursera.capstone.ui;
 
 import java.util.List;
 
+import org.coursera.capstone.R;
 import org.coursera.capstone.connector.CheckInListAdapter;
 import org.coursera.capstone.model.CheckIn;
 import org.coursera.capstone.model.Prescription;

@@ -1,8 +1,9 @@
-package org.coursera.capstone;
+package org.coursera.capstone.ui;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.coursera.capstone.R;
 import org.coursera.capstone.client.SecuredRestBuilder;
 import org.coursera.capstone.client.SymptomSvcApi;
 import org.coursera.capstone.client.UnsafeHttpsClient;

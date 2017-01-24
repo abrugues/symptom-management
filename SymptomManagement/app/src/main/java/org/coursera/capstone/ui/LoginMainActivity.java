@@ -1,9 +1,10 @@
-package org.coursera.capstone;
+package org.coursera.capstone.ui;
 
 import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Date;
 
+import org.coursera.capstone.R;
 import org.coursera.capstone.client.SecuredRestBuilder;
 import org.coursera.capstone.client.SymptomSvcApi;
 import org.coursera.capstone.client.UnsafeHttpsClient;
