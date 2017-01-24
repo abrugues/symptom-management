@@ -1,11 +1,13 @@
 package org.coursera.capstone.ui;
 
+import java.lang.ref.WeakReference;
 import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Date;
 
 import org.coursera.capstone.R;
 import org.coursera.capstone.client.SecuredRestBuilder;
+import org.coursera.capstone.client.SecuredRestException;
 import org.coursera.capstone.client.SymptomSvcApi;
 import org.coursera.capstone.client.UnsafeHttpsClient;
 import org.coursera.capstone.connector.MedicationDAO;
@@ -20,11 +22,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +55,9 @@ public class LoginMainActivity extends Activity {
 	private EditText passwordEditText;
 	private Button loginBtn;
 	private Button cancelBtn;
-	
+
+	private final InnerHandler handler = new InnerHandler(this);
+
 	private SharedPreferences settings;
 	
 	private MedicationDAO medicationDAO;
@@ -59,7 +66,7 @@ public class LoginMainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		// Check if there is a user already logged
 		settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		String lastRole = settings.getString(ROLE_LOGGED, null);
@@ -120,8 +127,17 @@ public class LoginMainActivity extends Activity {
 			@Override
 			public void run() {
 				SharedPreferences.Editor editor = settings.edit();
-				
-				Collection<String> role = symptomService.getRoles();
+
+				Collection<String> role = null;
+				try {
+					 role = symptomService.getRoles();
+				} catch (Exception ex) {
+					Message msg = Message.obtain();
+					msg.what = 401;
+					LoginMainActivity.this.handler.sendMessage(msg);
+					return;
+				}
+
 						
 				if (role.contains("PATIENT")) {
 					
@@ -157,6 +173,26 @@ public class LoginMainActivity extends Activity {
 		});
 		t.start();
 		
+	}
+
+	private static class InnerHandler extends Handler {
+
+		private WeakReference<LoginMainActivity> activity;
+
+		private InnerHandler(LoginMainActivity activity) {
+			this.activity = new WeakReference<>(activity);
+		}
+
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+				case 401:
+					Toast.makeText(activity.get(), "Login failure", Toast.LENGTH_LONG).show();
+					break;
+				default:
+					break;
+			}
+		}
 	}
 
 	private void enableButtonsOnTextChange() {
