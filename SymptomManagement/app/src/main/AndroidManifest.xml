@@ -35,7 +35,7 @@
         </activity>
         <activity
             android:name=".ui.PatientReminderActivity"
-            android:label="@string/set_reminders" >
+            android:label="@string/reminders" >
         </activity>
 
         <!-- Doctor's Activities -->

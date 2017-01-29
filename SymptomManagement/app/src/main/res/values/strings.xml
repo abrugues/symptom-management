@@ -15,7 +15,7 @@
 
     <string name="logout">Logout</string>
     <string name="check_in">Check-in</string>
-    <string name="set_reminders">Set Reminders</string>
+    <string name="reminders">Reminders</string>
     <string name="title_activity_checkin">CheckinActivity</string>
     <string name="moderate">Moderate</string>
     <string name="well_controlled">Well-controlled</string>
@@ -31,7 +31,7 @@
     <string name="some">Some</string>
     <string name="no_eat">I can\'t eat</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="wellcome">Enter your username and password</string>
+    <string name="welcome">Enter your username and password</string>
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="login">Login</string>

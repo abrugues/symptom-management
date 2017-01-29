@@ -37,7 +37,7 @@
         android:layout_marginTop="24dp"
         android:layout_centerHorizontal="true"
         android:textSize="36sp"
-        android:text="@string/set_reminders" />
+        android:text="@string/reminders" />
     
     <ImageView
         android:id="@+id/reminderImgView"
@@ -46,7 +46,7 @@
         android:layout_below="@id/reminderTxtView"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/set_reminders"
+        android:contentDescription="@string/reminders"
         android:src="@drawable/alarm_clock" />
     
 </RelativeLayout>

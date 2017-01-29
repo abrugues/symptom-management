@@ -6,23 +6,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.coursera.capstone.LoginMainActivity" >
+    tools:context="org.coursera.capstone.ui.LoginMainActivity" >
 
     <TextView
-        android:id="@+id/wellcomeTxtView"
+        android:id="@+id/welcomeTxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:textSize="20sp"
-        android:text="@string/wellcome" />
+        android:text="@string/welcome" />
 
     <EditText
         android:id="@+id/usernameEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/wellcomeTxtView"
-        android:layout_below="@id/wellcomeTxtView"
+        android:layout_alignLeft="@id/welcomeTxtView"
+        android:layout_below="@id/welcomeTxtView"
         android:layout_marginTop="16dp"
         android:ems="15"
         android:inputType="text"
