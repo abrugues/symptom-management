@@ -1,11 +1,20 @@
 package org.coursera.capstone.ui;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import org.coursera.capstone.R;
 import org.coursera.capstone.connector.ReminderDAO;
@@ -13,33 +22,29 @@ import org.coursera.capstone.connector.ReminderListAdapter;
 import org.coursera.capstone.model.Reminder;
 import org.coursera.capstone.process.ReminderSchedulerReceiver;
 
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.ListActivity;
-import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 
-public class PatientReminderActivity extends ListActivity {
-		
-	private ReminderListAdapter mAdapter;
-	
+public class PatientReminderActivity extends AppCompatActivity {
+
+    private static final String PARCEL_KEY = "items";
+
+    private ReminderListAdapter mAdapter;
 	private ReminderDAO mReminderDAO;
-		
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_reminder_patient);
         
-        if (savedInstanceState !=null) {
-        	Reminder[] reminders = (Reminder[]) savedInstanceState.getParcelableArray("items");
+        if (savedInstanceState != null) {
+        	Reminder[] reminders = (Reminder[]) savedInstanceState.getParcelableArray(PARCEL_KEY);
         	List<Reminder> items = new ArrayList<Reminder>();
         	for (int i = 0; i < reminders.length; i++) {
         		items.add(reminders[i]);
@@ -53,28 +58,31 @@ public class PatientReminderActivity extends ListActivity {
         // Create the DAO for the Reminders
         mReminderDAO = new ReminderDAO(this);
         
-        // Put a divider between HeaderView and Alarms 
-        getListView().setHeaderDividersEnabled(true);
+        // Put a divider between HeaderView and Alarms
+        ListView listView = (ListView) findViewById(R.id.alarmListView);
+        listView.setHeaderDividersEnabled(true);
 
         // Inflate headerView for header_view.xml file
         TextView headerView = (TextView) LayoutInflater
         		.from(PatientReminderActivity.this)
-        		.inflate(R.layout.header_view_reminder, getListView(), false);
+        		.inflate(R.layout.header_view_reminder, listView, false);
 
         // Add headerView to the ListView 
-        getListView().addHeaderView(headerView);
+        listView.addHeaderView(headerView);
 
         // Show a TimePickerDialog when headerView is pressed
         headerView.setOnClickListener(new OnClickListener() {
         	@Override
-        	public void onClick(View v) {
+        	public void onClick(View view) {
         		showTimePickerDialog();
         	}
         
         });
 
         // Attach the adapter to this ListActivity's ListView
-        this.setListAdapter(mAdapter);        
+        listView.setAdapter(mAdapter);
+
+        setUpFloatingActionButton();
     }
     
     @Override
@@ -100,8 +108,19 @@ public class PatientReminderActivity extends ListActivity {
     public void onSaveInstanceState(Bundle outState) {
     	super.onSaveInstanceState(outState);
     	Reminder[] items = mAdapter.getValues();
-    	outState.putParcelableArray("items", items);
+    	outState.putParcelableArray(PARCEL_KEY, items);
     }
+
+    private void setUpFloatingActionButton() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.addAlarmFAB);
+        fab.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showTimePickerDialog();
+            }
+        });
+    }
+
     
     private class TimePickerFragment extends DialogFragment
     	implements TimePickerDialog.OnTimeSetListener {
