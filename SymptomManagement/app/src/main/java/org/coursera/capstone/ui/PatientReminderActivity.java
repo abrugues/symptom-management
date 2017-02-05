@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -124,39 +126,57 @@ public class PatientReminderActivity extends AppCompatActivity {
     
     private class TimePickerFragment extends DialogFragment
     	implements TimePickerDialog.OnTimeSetListener {
-    	
+
+		TimePickerFragment() {
+
+		}
+
     	@Override 
     	public Dialog onCreateDialog(Bundle savedInstance) {
     		// Use the current time as the default values for the picker
     		final Calendar c = Calendar.getInstance();
     		int hour = c.get(Calendar.HOUR_OF_DAY);    		
     		int minute = c.get(Calendar.MINUTE);
-    		
+
     		Date d = c.getTime();
-    		
+
     		// Class extending TimePickerDialog to set a custom title
     		final class MyTimePickerDialog extends TimePickerDialog {
-    			
-    			public MyTimePickerDialog(Context context,
-						OnTimeSetListener callBack, int hourOfDay, int minute,
-						boolean is24HourView) {
+
+				private TextView titleTextView;
+				private String addReminderString;
+
+    			public MyTimePickerDialog(Context context, OnTimeSetListener callBack,
+										  int hourOfDay, int minute, boolean is24HourView) {
 					super(context, callBack, hourOfDay, minute, is24HourView);
+					titleTextView = new TextView(getActivity());
+					addReminderString = getString(R.string.add_reminder);
 				}
-    			
-    			// Custom implementation 
+
+				public TextView setTextViewTitle(Date date) {
+					titleTextView.setPadding(20, 20, 20, 20);
+					titleTextView.setGravity(Gravity.CENTER);
+					titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+					String dateString = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(date);
+					titleTextView.setText(addReminderString + " " + dateString);
+					return titleTextView;
+				}
+
+    			// Custom implementation
     			@Override
     			public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
     				c.set(Calendar.HOUR_OF_DAY, hourOfDay);
     				c.set(Calendar.MINUTE, minute);
     				Date d = c.getTime();
-    				setTitle("New reminder at " + new SimpleDateFormat("HH:mm", Locale.getDefault()).format(d));
+					String dateString = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(d);
+					titleTextView.setText(addReminderString + " " + dateString);
     			}
     		}
-    		
+
     		// Create a new instance of TimePickerDialog and return it
     		MyTimePickerDialog dialog = new MyTimePickerDialog(getActivity(), this, hour, minute, true);
-    		dialog.setTitle("New reminder at " + new SimpleDateFormat("HH:mm", Locale.getDefault()).format(d));
-    		return dialog;
+			dialog.setCustomTitle(dialog.setTextViewTitle(d));
+			return dialog;
     	}
     	
     	@Override
