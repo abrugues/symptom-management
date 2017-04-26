@@ -1,16 +1,17 @@
 # symptom-management
 This repository contains the implementation of the capstone project for
-the [Mobile Cloud Computing with Android (MoCCA)][1] specialization.
+the Mobile Cloud Computing with Android (MoCCA)] specialization on
+Coursera, which doesn't exist anymore.
 
 The project consists on a software solution to manage the symptoms of
 head and neck cancer patients. Two main components are used to achieve
 this goal: an Android application and a Spring based server.
 
 The Android application is used by the patients to report their symptoms,
-and the doctors to check the status of their patients. The Spring server
-mediates the interactions between those two.
+and by the doctors to check the status of their patients. The Spring
+server mediates the interactions between patients and doctors.
 
-A complete list of the requirements for each component can be found [here][2].
+A complete list of the requirements for each component can be found [here][1].
 
 # LICENSE
 	Copyright 2015 Albert Brugués
@@ -27,5 +28,4 @@ A complete list of the requirements for each component can be found [here][2].
 	See the License for the specific language governing permissions and
 	limitations under the License.
 
-[1]: https://www.coursera.org/specialization/mobilecloudcomputing2/36?utm_medium=catalog
-[2]: https://github.com/douglascraigschmidt/MoCCA-Capstone/blob/master/projects/Symptom%20Management%20project%20requirements.pdf
+[1]: https://github.com/douglascraigschmidt/MoCCA-Capstone/blob/master/projects/Symptom%20Management%20project%20requirements.pdf
